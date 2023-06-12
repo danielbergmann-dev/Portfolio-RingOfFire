@@ -1,0 +1,94 @@
+
+
+.field {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.field video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+
+
+.card-stack {
+  position: relative;
+  img {
+    position: absolute;
+    width: 120px;
+  }
+}
+
+.top-card {
+  cursor: pointer;
+  transition: all 125ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.1) translateY(-10px);
+  }
+}
+
+.played-card {
+  right: 25px;
+  transform: scale(1.3) translateX(140px) translateY(-180px) rotate(-10deg);
+}
+
+.pick-card {
+  animation: pickCardAnimation 1s ease-in-out;
+  transform: scale(1.3) translateX(140px) translateY(-180px) rotate(-10deg);
+}
+
+@keyframes pickCardAnimation {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.7) translateY(-100px);
+  }
+  60% {
+    transform: scale(1.7) translateY(-100px);
+  }
+  100% {
+    transform: scale(1.3) translateX(140px) translateY(-180px) rotate(-10deg);
+  }
+}
+
+.player-position {
+  position: absolute;
+  left: 0;
+}
+
+.btn-add {
+  position: absolute;
+  left: 134px;
+  bottom: 85px;
+
+}
+
+.pin-bottom {
+  position: absolute;
+  bottom: 32px;
+  left: 100px;
+  right: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+}
+

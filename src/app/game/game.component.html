@@ -1,0 +1,60 @@
+<app-player
+  (click)="editPlayer(i)"
+  *ngFor="let player of game.players; let i = index"
+  [ngStyle]="{ 'top.px': 100 + i * 90, 'cursor': 'pointer' }"
+  [name]="player"
+  [playerActive]="i == game.currentPlayer"
+  class="player-position"
+></app-player>
+
+
+<div class="main-field">
+  <div class="field">
+    <video autoplay loop muted>
+      <source src="assets/img/cards/coding_2.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="card-stack">
+      <!-- card stack-->
+      <img
+        *ngFor="let c of [0, 1, 2, 3]; let i = index"
+        [ngStyle]="{ 'right.px': i * 5 }"
+        src="assets/img/cards/card_cover.png"
+      />
+      <img
+        (click)="takeCard()"
+        class="top-card"
+        style="right: 25px"
+        src="assets/img/cards/card_cover.png"
+      />
+
+      <!-- stack for played cards-->
+      <img
+        *ngFor="let card of game.playedCard"
+        class="played-card"
+        src="assets/img/cards/{{ card }}.png"
+      />
+
+      <!-- current card animation-->
+      <img
+        (click)="takeCard()"
+        *ngIf="game.pickCardAnimation"
+        class="pick-card"
+        style="right: 25px"
+        src="assets/img/cards/{{ game.currentCard }}.png"
+      />
+    </div>
+  </div>
+</div>
+
+<app-game-info [card]="game.currentCard" class="pin-bottom"> </app-game-info>
+
+<button
+  mat-fab
+  color="primary"
+  aria-label="Example icon button with a delete icon"
+  class="btn-add"
+  (click)="openDialog()"
+>
+  <mat-icon>person_add</mat-icon>
+</button>

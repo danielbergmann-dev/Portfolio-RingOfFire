@@ -1,0 +1,33 @@
+.player {
+  width: 220px;
+  display: flex;
+  justify-content: space-between; /* Add this line */
+  align-items: center;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  text-align: center;
+
+
+  span {
+    font-size: 32px;
+    
+    color: aliceblue;
+    position: relative;
+    left: 5rem;
+  }
+
+  background-color: rgba(0, 255, 55, 0.144);
+
+  img {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    object-fit: cover;
+    position: fixed;
+  }
+}
+
+.player-active {
+  background-color: rgba(230, 230, 230, 0.568) !important; 
+}
+
