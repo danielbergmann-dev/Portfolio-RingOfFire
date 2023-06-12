@@ -1,4 +1,4 @@
-# Ringoffire
+# Ring Of Fire - a code learning card game
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
 
